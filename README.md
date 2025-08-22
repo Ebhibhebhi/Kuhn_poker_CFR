@@ -44,10 +44,10 @@ Here’s how it works:
 
 Now that we know about Kuhn Poker, let me explain the counterfactual regret minimization algorithm on a high level:  
 The CFR algorithm essentially involves self-play, countless times, and in each iteration of the game, the bot compares it's expected pay off from taking various actions,
-and quantifies how much it regrets not taking certain actions (with respect to the cumulative expected value of that decision point) in the game tree. It weights these regrets based on the probability of arriving at those information sets
-due to the opponent (assuming the opponent uses an identical strategy). As the algorithm calculates it's regrets at each infoset, it updates it's strategy at that infoset such that it chooses each action with a probability that is proportional to the
-running sum of regret values for that action. With each updated strategy at each infoset, it stores a sum of strategies for each infoset and the average of these strategies is what converges to the nash equilibrium strategy, which is the most optimal strategy
-that guarantees the player to not lose in expectation.
+and quantifies how much it regrets not taking certain actions (with respect to the cumulative expected value of that decision point) in the game tree. It weights these regrets based on the probability of arriving at those information sets due to the opponent (assuming the opponent uses an identical strategy). As the algorithm calculates it's regrets at each infoset, it updates it's strategy at that infoset such that it chooses each action with a probability that is proportional to the running sum of regret values for that action. With each updated strategy at each infoset, it stores a sum of strategies for each infoset and the average of these strategies is what converges to the nash equilibrium strategy, which is the most optimal strategy that guarantees the player to not lose in expectation.  
+
+To investigate the more specific implementation of the algorithm for Kuhn Poker we must first take a look at it's game tree:
+
 
 
 
